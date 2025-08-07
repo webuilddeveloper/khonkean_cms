@@ -1,0 +1,165 @@
+<h5 class="breadcrumbs-title mt-0 mb-0 display-inline hide-on-small-and-down"><span>{{title}}</span></h5>
+<ol class="breadcrumbs mb-0">
+    <li class="breadcrumb-item"><a href="javascript:void(0)">เมนูหลัก</a>
+    </li>
+    <!-- <li class="breadcrumb-item"><a href="javascript:void(0)">รายงาน</a>
+    </li> -->
+    <li class="breadcrumb-item active">{{title}}
+    </li>
+</ol>
+<br>
+<br>
+<ngx-spinner>
+    <p style="color: white"> Loading... </p>
+</ngx-spinner>
+
+<!-- BEGIN: Page Main-->
+
+<div class="col s12" style="padding-left: 0px !important;">
+
+
+    <div class="row">
+        <div class="col s12">
+            <div class="container">
+                <section class="users-list-wrapper section">
+                    <div class="users-list-filter">
+                        <!-- Header -->
+                        <div class="card-panel"
+                            style="margin-bottom: 0px; background-color:lavender; vertical-align: text-top;">
+
+                            <div class="row">
+                                <div class="col s8">
+                                    <i class="material-icons header-icon">
+                                        border_color
+                                    </i>
+                                    <span
+                                        style="position: relative; float:left; font-size: 1em; padding-left: 10px; padding-top: 10px;">
+                                        รายละเอียด
+                                    </span>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="card-panel" style="margin-bottom: 0px; margin-top: 0px;">
+
+                            <!-- BEGIN: Do Something This Here -->
+
+                            <div class="col s9">
+                                <div class="row">
+                                    <div class="col s12">
+
+                                        <div class="row">
+                                            <div class="col s3">
+                                                <span style="font-size: 1.5em; font-weight: 600;">
+                                                    หัวข้อ
+                                                </span>
+                                            </div>
+                                            <div class="col s9">
+                                                <span style="font-size: 1.5em">
+                                                    {{editModel.title}}
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col s3">
+                                                <span [hidden]="editModel.gallery.length == 0"
+                                                    style="font-size: 1.5em; font-weight: 600;">
+                                                    รายละเอียด
+                                                </span>
+                                            </div>
+                                            <div class="col s9">
+                                                <span style="font-size: 1.5em">
+                                                    {{editModel.description}}
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col s9">
+                                <div class="row">
+                                    <div class="col s12" style="margin-left: -15px !important; margin-bottom: 10px">
+                                        <csop (cModel)="editModel.reportStatus = $event" [label]="'*สถานะ'"
+                                            [data]="editModel.reportStatus"
+                                            [sources]="[{ value: '1', display: 'กำลังแก้ไข', disabledValue: statusReport == '1' }, { value: '2', display: 'เสร็จสิ้น' }]">
+                                        </csop>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col s12" style="margin-left: -15px !important; padding-bottom: 0px;">
+                                        <citxt (cModel)="editModel.reportDescription = $event"
+                                            [label]="'*รายละเอียดการแก้ไข : '" [data]="editModel.reportDescription || ''">
+                                        </citxt>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col s12" style="margin-left: -15px !important; padding-bottom: 0px;">
+                                        <citxt (cModel)="editModel.officer = $event"
+                                            [label]="'*เจ้าหน้าที่ลงสถานะ : '" [data]="editModel.officer || ''">
+                                        </citxt>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col s12">
+                                    <div class="row">
+                                        <div class="col s12">
+                                            <div class="gallerize-example">
+                                                <span [hidden]="editModel.gallery.length == 0" style="font-size: 1em">
+                                                    รูปภาพประกอบ
+                                                </span>
+                                                <p class="container" gallerize style="margin-top: 1em;">
+                                                    <img *ngFor="let img of editModel.gallery" [src]="img.imageUrl"
+                                                        height="auto" width="200px" style="margin: 5px;">
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- END: Do Something This Here -->
+
+                        </div>
+
+
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col s12">
+            <div class="container">
+                <section class="users-list-wrapper section">
+                    <div class="users-list-filter">
+
+                        <div class="card-panel" style="margin-bottom: 0px; margin-top: 0px;">
+
+                            <!-- BEGIN: Do Something This Here -->
+
+                            <div class="row">
+                                <div class="col s12" style="text-align: center; margin-top: 10px;">
+                                    <cbtn (click)="update()" [label]="'บันทึก'" [color]="'blue'"></cbtn>
+                                    <cbtn [label]="'ยกเลิก'" [color]="'red'" (click)="back()"></cbtn>
+                                </div>
+                            </div>
+
+                            <!-- END: Do Something This Here -->
+
+                        </div>
+
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- END: Page Main-->
