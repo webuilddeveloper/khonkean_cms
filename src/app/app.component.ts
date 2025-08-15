@@ -783,7 +783,7 @@ export class AppComponent {
     this.spinner.show();
 
     if (username == 'admin' && password == 'p@ssw0rd') {
-      localStorage.setItem('category', JSON.stringify({ organizationPage: true, userRolePage: true, memberPage: true, createAction: true, readAction: true, updateAction: true, deleteAction: true }));
+      localStorage.setItem('category', JSON.stringify({ organizationPage: true, userRolePage: true, memberPage: true, createAction: true, readAction: true, approveAction: true, updateAction: true, deleteAction: true }));
       localStorage.setItem('token', 'token');
       localStorage.setItem('username', 'admin');
       window.location.href = "";

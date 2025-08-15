@@ -87,19 +87,19 @@ tr:nth-child(even) {
 
 /* DDPM */
 .background-sidebar {
-    background: #bf9001 !important;
+    background: #9e3227 !important;
 }
 .background-header {
-    background: linear-gradient(45deg, #edca5a, #bf9001) !important;
+    background: linear-gradient(45deg, #d65e4f, #9e3227) !important;
 }
 .background-footer {
-    background: linear-gradient(45deg, #edca5a, #bf9001) !important;
+    background: linear-gradient(45deg, #d65e4f, #9e3227) !important;
 }
 .sidenav li a.active {
     margin: 0;
     color: #fff;
-    background: linear-gradient(45deg, #bf9001, #edca5a) !important;
-    box-shadow: 3px 3px 20px 0 #b8a25f !important;
+    background: linear-gradient(45deg, #9e3227, #d65e4f) !important;
+    box-shadow: 3px 3px 20px 0 #d65e4f !important;
 }
 
 /* DOPA */
