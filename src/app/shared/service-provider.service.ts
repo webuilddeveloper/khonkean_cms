@@ -10,7 +10,7 @@ export class ServiceProviderService {
   // dev
   // server: string = 'http://122.155.223.63/td-khubdee-api/';
   // product
-  server: string = 'http://gateway.we-builds.com/khonkean-api/';
+  server: string = 'https://gateway.we-builds.com/khonkean-api/';
 
   constructor(private http: HttpClient) { }
 
